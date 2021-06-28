@@ -1,23 +1,24 @@
-class Variables:
+# Una escuela aplica dos exámenes a sus aspirantes, por lo que cada uno de ellos obtiene dos calificaciones
+# denotadas como C1 y C2.
+# El aspirante que obtenga calificaciones mayores que 80 en ambos exámenes es aceptado; en caso contrario es rechazado.
+class Notas:
+
     def run(self):
+
         try:
-            num = int(input("Escriba un numero entero: "))
-            v = int(input("Escriba un valor entero: "))
-            if num == 1:
-                print("La respuesta es 100*{} = {}".format(v, 100*v))
-            elif num == 2:
-                print("La respuesta es 100^{} = {}".format(v, 100 ^ v))
-
-            elif num == 3:
-                print("La respuesta es 100/{} = {}".format(v, 100/v))
-
+            c1 = float(input("Ingrese la primera nota:"))
+            c2 = float(input("Ingrese la primera nota:"))
+            if c1 > 0 and c2 > 0:
+                if c1 > 80 and c2 > 80:
+                    print("Aceptado")
+                else:
+                    print("Rechazado")
             else:
-                print("La respuesta es 0")
-
+                return Notas.run(self)
         except ValueError:
-            print("Dato incorrecto, ingrese un numero entero")
-            return Variables.run(self)
+            print("Dato incorrecto, ingrese nuevamente los datos")
+            return Notas.run(self)
 
 
-ejecutar = Variables()
-ejecutar.run()
+hacer = Notas()
+hacer.run()

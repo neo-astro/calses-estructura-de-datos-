@@ -1,20 +1,15 @@
-class Fac:
-
+class Mayor:
     def run(self):
         try:
-            numero = int(input("Ingrese un numero:"))
-            acu = 1
-            if numero > 0:
-                for num in range(numero, 1, -1):
-                    acu = acu*num
-                print("El factorial de {} es igual a :{}".format(numero, acu))
-            else:
-                return print("EL DATO INGRESADO ES INCORRECTO"), Fac.run(self)
-
+            n1 = int(input("Escriba un numero entero: "))
+            n2 = int(input("Escriba otro numero entero: "))
+            n3 = int(input("Escriba otro numero entero: "))
+            bi = [n1, n2, n3]
+            print("El numero mayor es: ", max(bi))
         except ValueError:
-            print("EL DATO INGRESADO ES INCORRECTO")
-            return Fac.run(self)
+            print("Dato incorrecto, ingrese un numero entero")
+            return Mayor.run(self)
 
 
-eje = Fac()
-eje.run()
+ejecutar = Mayor()
+ejecutar.run()
