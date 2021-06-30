@@ -1,15 +1,11 @@
-class Mayor:
-    def run(self):
-        try:
-            n1 = int(input("Escriba un numero entero: "))
-            n2 = int(input("Escriba otro numero entero: "))
-            n3 = int(input("Escriba otro numero entero: "))
-            bi = [n1, n2, n3]
-            print("El numero mayor es: ", max(bi))
-        except ValueError:
-            print("Dato incorrecto, ingrese un numero entero")
-            return Mayor.run(self)
+# En una tienda se ofrece un descuento del 15% sobre el total de la compra
+# y un cliente desea saber cuánto deberá pagar finalmente por su compra.
+def porcentaje():
+    try:
+        total = float(input("Escriba el total a pagar: "))
+        res = total - total*0.15
+        print("El total a pagar es de {} $".format(res))
+    except ValueError:
+        return print("Dato incorrecto, intentelo nuevamente"), porcentaje()
 
-
-ejecutar = Mayor()
-ejecutar.run()
+porcentaje()

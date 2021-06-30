@@ -1,32 +1,18 @@
-# Aplicar las fases  para  la resolución de un problema para leer un vector de 20 números enteros y a continuación
-# escribir en un vector A todos los números negativos y en un vector B todos los positivos o iguales a cero. Imprimir
-# dichos vectores.
-
-class Vectores:
+# Determinar si un número entero proporcionado por el usuario es primo.
+# Un número primo es un entero que no tiene más divisores que él mismo y la unidad. Elaborar Pseudocódigo:
+class Primo:
     def run(self):
-        vector = []
-        vectorA = []
-        vectorB = []
         try:
-
-            while len(vector) != 4:
-                numeros = float(input("Escribe otro numero:"))
-                vector.append(numeros)
-
-            for numero in vector:
-                if numero < 0:
-                    vectorA.append(numero)
-
-                elif numero >= 0:
-                    vectorB.append(numero)
-
-            print("Los numeros negativos encontrados son: ", vectorA)
-            print("Los numeros positivos encontrados son: ", vectorB)
+            numero = int(input("Escribe un numero entero:"))
+            if numero % 2 == 0 or numero % 3 == 0:
+                print("Lo siento no es un numero primo")
+            else:
+                print("Felicidades es un numero primo")
 
 
         except ValueError:
-            return print("Solo puedes escribir numeros!"), Vectores.run(self)
+            return print("DATO INCORRECTO INTENTALO NUEVAMENTE"), Primo.run(self)
 
 
-eje = Vectores()
-eje.run()
+hacer = Primo()
+hacer.run()

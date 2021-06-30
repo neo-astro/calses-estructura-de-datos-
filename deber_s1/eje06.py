@@ -1,17 +1,15 @@
-#  Elabore pseudocódigo para el caso en que se desean escribir los números del 1 al 100
-class EscribirHasta:
+class Mayor:
     def run(self):
         try:
-            num = float(input("Escribir un numero del 1 hasta el 100:"))
-            if num >= 1:
-                while num >= 1:
-                    num = float(input("Escribir un numero del 1 hasta el 100:"))
-            else:
-                return print("Lo siento tu numero no se encuentra en el rango del 1 a 100"), EscribirHasta.run(self)
-
+            n1 = int(input("Escriba un numero entero: "))
+            n2 = int(input("Escriba otro numero entero: "))
+            n3 = int(input("Escriba otro numero entero: "))
+            bi = [n1, n2, n3]
+            print("El numero mayor es: ", max(bi))
         except ValueError:
-            return print("Lo siento tu numero no se encuentra en el rango del 1 a 100"), EscribirHasta.run(self)
+            print("Dato incorrecto, ingrese un numero entero")
+            return Mayor.run(self)
 
 
-eje = EscribirHasta()
-eje.run()
+ejecutar = Mayor()
+ejecutar.run()

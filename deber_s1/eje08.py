@@ -1,25 +1,24 @@
-# Diseñe un pseudocódigo para calcular la suma y producto de N números enteros
-# utilizando un bucle controlado por centinela.
-
-class Calcular:
+# Una escuela aplica dos exámenes a sus aspirantes, por lo que cada uno de ellos obtiene dos calificaciones
+# denotadas como C1 y C2.
+# El aspirante que obtenga calificaciones mayores que 80 en ambos exámenes es aceptado; en caso contrario es rechazado.
+class Notas:
 
     def run(self):
+
         try:
-            acu = 1
-            num = int(input("Ingrese un dato:"))
-            numeros = []
-            numeros.append(num)
-            while num != 20:
-                num = int(input("Ingrese otro dato:"))
-                numeros.append(num)
-            print("La suma de los datos es:", sum(numeros))
-
-            for numero in numeros:
-                acu *= numero
-            print("La multiplicacion de los datos es:", acu)
+            c1 = float(input("Ingrese la primera nota:"))
+            c2 = float(input("Ingrese la primera nota:"))
+            if c1 > 0 and c2 > 0:
+                if c1 > 80 and c2 > 80:
+                    print("Aceptado")
+                else:
+                    print("Rechazado")
+            else:
+                return Notas.run(self)
         except ValueError:
-            return print("Lo siento dato incorrecto"), Calcular.run(self)
+            print("Dato incorrecto, ingrese nuevamente los datos")
+            return Notas.run(self)
 
 
-eje = Calcular()
-eje.run()
+hacer = Notas()
+hacer.run()

@@ -1,28 +1,18 @@
-#Diseñar un algoritmo tal que dados como datos dos variables de tipo entero, obtenga el resultado de la siguiente función:
-# R = {100*v      sin num= 1
-#      100^v      si num = 2
-#      100/v      si num = 3
-#       0}        si num es != 1,2,3s
-class Variables:
-    def run(self):
-        try:
-            num = int(input("Escriba un numero entero: "))
-            v = int(input("Escriba un valor entero: "))
-            if num == 1:
-                print("La respuesta es 100*{} = {}".format(v, 100*v))
-            elif num == 2:
-                print("La respuesta es 100^{} = {}".format(v, 100 ^ v))
+# Un vendedor recibe un sueldo base más un 10% extra por comisión de sus ventas.
+# El vendedor desea saber cuánto dinero obtendrá por concepto de comisiones por las tres
+# ventas que realiza en el mes y el total que recibirá en el mes tomando en cuenta su sueldo base y sus comisiones.
 
-            elif num == 3:
-                print("La respuesta es 100/{} = {}".format(v, 100/v))
-
-            else:
-                print("La respuesta es 0")
-
-        except ValueError:
-            print("Dato incorrecto, ingrese un numero entero")
-            return Variables.run(self)
+def pago():
+    try:
+        sueldo = float(input("Escriba el sueldo base del empleado: "))
+        comi1 = float(input("Escriba el valor de la venta 1: "))
+        comi2 = float(input("Escriba el valor de la venta 2: "))
+        comi3 = float(input("Escriba el valor de la venta 3: "))
+        r = sueldo + (comi3 + comi1 + comi2)*0.1
+        print("EL TOTAL A PAGAR AL EMPLEADO ES DE : {} $ , comisiones = {} $".format(r, (comi2+comi3+comi1)*0.1))
 
 
-ejecutar = Variables()
-ejecutar.run()
+    except ValueError:
+        return print(("DATO INCORRECTO, INTENTALO NUEVAMENTE").center(50, "-")), pago()
+if __name__ == '__main__':
+    pago()

@@ -1,27 +1,28 @@
-# Diseñe un pseudocódigo para calcular la suma y producto de N números enteros
-# utilizando un bucle controlado por el usuario.
-
-class Calcular:
-
+#Diseñar un algoritmo tal que dados como datos dos variables de tipo entero, obtenga el resultado de la siguiente función:
+# R = {100*v      sin num= 1
+#      100^v      si num = 2
+#      100/v      si num = 3
+#       0}        si num es != 1,2,3s
+class Variables:
     def run(self):
         try:
-            acu = 1
-            num = int(input("Ingrese un dato:"))
-            numeros = []
-            numeros.append(num)
-            pregunta = input("Desea continuar si/no?. Si ingresa una opcion distinta visualizara los resultados:").lower()
-            while pregunta == "si":
-                num = int(input("Ingrese otro dato:"))
-                numeros.append(num)
-                pregunta = input("Desea continuar si/no?. Si ingresa una opcion distinta visualizara los resultados:").lower()
-            print("La suma de los datos es:", sum(numeros))
+            num = int(input("Escriba un numero entero: "))
+            v = int(input("Escriba un valor entero: "))
+            if num == 1:
+                print("La respuesta es 100*{} = {}".format(v, 100*v))
+            elif num == 2:
+                print("La respuesta es 100^{} = {}".format(v, 100 ^ v))
 
-            for numero in numeros:
-                acu *= numero
-            print("La multiplicacion de los datos es:", acu)
+            elif num == 3:
+                print("La respuesta es 100/{} = {}".format(v, 100/v))
+
+            else:
+                print("La respuesta es 0")
+
         except ValueError:
-            return print("Lo siento dato incorrecto"), Calcular.run(self)
+            print("Dato incorrecto, ingrese un numero entero")
+            return Variables.run(self)
 
 
-eje = Calcular()
-eje.run()
+ejecutar = Variables()
+ejecutar.run()
