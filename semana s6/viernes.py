@@ -81,6 +81,7 @@ class Ordenar:
         self.lista = list
         return ultimo
     # INSERTAR METODO 1
+    
     def insertar(self,num ):
         self.ordenar_asc()
         auxlista = []
@@ -91,13 +92,49 @@ class Ordenar:
             # else:
             #     auxlista.append(numero)
         self.lista = self.lista[0: pos] + auxlista + self.lista[pos:]
+
+   
+   
+    # INSERTAR METODO 2
+    def insertar2(self,num ):
+        self.ordenar_asc()
+        
+        aux_lista = []
+        
+        # for pos, ele in enumerate(self.lista):
+        #     if num < ele:
+        #         aux_lista.append(num)
+        #         break
+        # self.lista = self.lista[0: pos] + aux_lista + self.lista[pos:]
+       
+        for pos, ele in enumerate(self.lista):
+            if num < ele:
+                aux_lista.append(num)
+                break
+        A
+        for j in range(pos, len(self.lista)):
+            aux_lista.append(self.lista[j])
+        self.lista = aux_lista
+    def insertar_orden(self,num):
+        self.lista.append(num)
+        self.ordenar_asc
+        
+    def elimanado(self, num):
+        for pos, ele in enumerate(self.lista):
+            encontrado = False
+            if num == ele:
+                encontrado = True
+                break
+        if encontrado:  self.lista = self.lista[0:pos] + self.lista[pos + 1:]
+        return encontrado
+    
     # INSERTAR METODO 2
     def insertar2(self,num ):
         self.lista.append(num)
         self.ordenar_asc()
 
 
-lista = [2, 3, 8, 10] 
+lista = [2, 3, 8, 10]
 # lista = [2, 3, 8, 10] = [2, 3, 5, 8, 10]
         #  0  1  2   3     0  1  2  3   4
 
@@ -106,4 +143,8 @@ ord1 = Ordenar(lista)
 print(ord1.insertar(5))
 print(ord1.lista)
 print(ord1.insertar2(5))
+
+
 print("CON METODO 2\n{}".format(ord1.lista))
+if ord1.elimanado(111) == True : print("El numero se a eliminado de la lista", ord1.lista)
+else: print("El numero no se encuentra")
