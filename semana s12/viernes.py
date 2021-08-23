@@ -1,24 +1,25 @@
+<<<<<<< HEAD
 class Lista:
     def __init__(self,tamanio=3):
         self.lista = []
         self.longitud = 0
         self.size = tamanio
-        
+
     def append(self,dato):
         if self.longitud < self.size:
             self.lista += [dato]
             self.longitud += 1
             return True
-            
+
         else:
             return False
-    
+
     def obtener(self,pos):
         if pos < 0 or pos >= self.longitud:
             return None
         else:
             return self.lista[pos]
-    
+
     def obtenerEliminado(self,pos):
         if pos < 0 or pos >= self.longitud:
             return None
@@ -51,3 +52,9 @@ if resp == None:
 else:
     print("El elemento de la lista: {} es: {}".format(posicion,resp))
             
+=======
+lista = [[1,2,3], [4,5,6]]
+for i in lista:
+    for ele in i:
+        print(ele)
+>>>>>>> 5fbb83fa65b3ab839cfed6adecfcb834cd204101
