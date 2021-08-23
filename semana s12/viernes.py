@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Lista:
     def __init__(self,tamanio=3):
         self.lista = []
@@ -52,9 +51,4 @@ if resp == None:
 else:
     print("El elemento de la lista: {} es: {}".format(posicion,resp))
             
-=======
-lista = [[1,2,3], [4,5,6]]
-for i in lista:
-    for ele in i:
-        print(ele)
->>>>>>> 5fbb83fa65b3ab839cfed6adecfcb834cd204101
+
